@@ -69,6 +69,7 @@ namespace TP2_Leal
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
+           
             AltaArticulo agregar = new AltaArticulo();
             agregar.ShowDialog();
             CargarDatos();

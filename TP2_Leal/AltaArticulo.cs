@@ -14,7 +14,8 @@ namespace TP2_Leal
 {
     public partial class AltaArticulo : Form
     {
-        private Articulo articulo=null;
+      
+        private Articulo articulo = null;
         public AltaArticulo()
         {
             InitializeComponent();
@@ -39,7 +40,7 @@ namespace TP2_Leal
         private void AltaArticulo_Load(object sender, EventArgs e)
         {
             cargar();
-            
+
         }
 
         private void cargar()
@@ -55,7 +56,7 @@ namespace TP2_Leal
                 cmbMarca.DisplayMember = "NombreMarca";
                 cmbMarca.ValueMember = "IdMarca";
 
-                if (articulo!=null)
+                if (articulo != null)
                 {
                     txtCodigo.Text = articulo.CodigoArticulo;
                     txtDescripcion.Text = articulo.Descripcion;
@@ -83,7 +84,7 @@ namespace TP2_Leal
         private void btnAceptar_Click(object sender, EventArgs e)
         {
             ArticuloNegocio articulonegocio = new ArticuloNegocio();
-           
+
 
             try
             {
@@ -91,28 +92,47 @@ namespace TP2_Leal
                 {
                     articulo = new Articulo();
                 }
-                    articulo.NombreArticulo = txtNombre.Text;
+                articulo.NombreArticulo = txtNombre.Text;
                 articulo.Descripcion = txtDescripcion.Text;
                 articulo.CodigoArticulo = txtCodigo.Text;
                 decimal p = Convert.ToDecimal(txtPrecio.Text);
-                articulo.Precio =  p;
+                articulo.Precio = p;
                 articulo.URLImagen = txtImagen.Text;
                 articulo.Marca = (Marca)cmbMarca.SelectedItem;
                 articulo.Categoria = (Categoria)cmbCategoria.SelectedItem;
-              
-                
-               if(articulo.IdArticulo==null)
+
+                if (txtCodigo.Text==string.Empty || txtNombre.Text==string.Empty)
+                {
+                    MessageBox.Show("Debe completar los capos Nombre y Codigo", "Faltan campos");
+                }
+                if (txtCodigo.Text == "")
+                {
+                    txtCodigo.BackColor = Color.Yellow;
+
+                }
+                else txtCodigo.BackColor = System.Drawing.SystemColors.Control;
+                if (txtNombre.Text == "")
+                {
+                    txtNombre.BackColor = Color.Yellow;
+
+                }
+                else txtNombre.BackColor = System.Drawing.SystemColors.Control;
+
+                if (articulo.IdArticulo == null)
                 {
 
                     articulonegocio.Agregar(articulo);
                 }
-               else
+                else
                 {
                     articulonegocio.Modificar(articulo);
-                    
+
                 }
 
                 Dispose();
+                
+
+
 
             }
             catch (Exception ex)
@@ -136,5 +156,12 @@ namespace TP2_Leal
             cat.ShowDialog();
             cargar();
         }
+
+        
+  
+        }
+
+
     }
-}
+
+
