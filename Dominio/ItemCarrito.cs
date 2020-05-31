@@ -10,5 +10,6 @@ namespace Dominio
     {
         public int Cantidad { get; set; }
         public Articulo Producto { get; set; }
+        public decimal Subtotal { get; set; }
     }
 }

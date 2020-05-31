@@ -57,6 +57,7 @@
                     <ul class="nav navbar-nav">
                         <li class="nav-item"><a runat="server" href="~/">Inicio</a></li>
                         <li class="nav-item"><a runat="server" href="~/Producto">Producto</a></li>
+                        <li class="nav-item"><a runat="server" href="~/Carrito">Carrito</a></li>
                         <li class="nav-item"><a runat="server" href="~/Contact">Contacto</a></li>
                     </ul>
                 </div>
