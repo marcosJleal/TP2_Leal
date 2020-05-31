@@ -13,5 +13,10 @@ namespace WebApp
         {
 
         }
+
+        protected void txtBuscar_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

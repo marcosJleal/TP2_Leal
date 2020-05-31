@@ -1,7 +1,12 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="ProductoCards.aspx.cs" Inherits="WebApp.ProductoCards" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
+    <form class="form-inline my-2 my-lg-0">
+        <asp:TextBox ID="txtBuscar" runat="server" CssClass="form-control mr-sm-2" style="display:inline-block" ></asp:TextBox>
+        <button class="btn btn-dark" type="submit"style="display:inline-block">Buscar</button>
+    </form>
     <h1 style="text-align: center;">Productos</h1>
+    <a href="/Producto.aspx" class="btn btn-dark">Lista</a>
 
     <div class="card-columns" style="margin: 20px 20px 20px 20px;">
         <%foreach (var item in listadoArticulos)

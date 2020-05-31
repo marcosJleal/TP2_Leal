@@ -129,6 +129,7 @@
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Producto.aspx" />
     <Content Include="ProductoCards.aspx" />
+    <Content Include="ProductoDetalles.aspx" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
@@ -217,6 +218,13 @@
     </Compile>
     <Compile Include="ProductoCards.aspx.designer.cs">
       <DependentUpon>ProductoCards.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ProductoDetalles.aspx.cs">
+      <DependentUpon>ProductoDetalles.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ProductoDetalles.aspx.designer.cs">
+      <DependentUpon>ProductoDetalles.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Site.Master.cs">

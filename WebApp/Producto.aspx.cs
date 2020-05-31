@@ -11,12 +11,11 @@ namespace WebApp
 {
     public partial class Producto : System.Web.UI.Page
     {
+        public List<Articulo> listado;
         protected void Page_Load(object sender, EventArgs e)
         {
             ArticuloNegocio negocio=new ArticuloNegocio();
-
-            GVProducto.DataSource = negocio.listar();
-            GVProducto.DataBind();
+            listado = negocio.listar();
 
             
         }
@@ -30,5 +29,7 @@ namespace WebApp
         {
             Response.Redirect("Default.aspx");
         }
+
+       
     }
     }

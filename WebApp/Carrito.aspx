@@ -20,17 +20,49 @@
                 <tr>
                     <td><%=prod.Producto.NombreArticulo %></td>
                     <td><%=prod.Producto.Precio %></td>
-                    <td><%=prod.Cantidad %></td>
+                    <td>
+                        <a href="Carrito.aspx?idrestcantidad=<% =prod.Producto.IdArticulo.ToString() %>" class="btn btn-dark">-</a>
+                        <%=prod.Cantidad %>
+                        <a href="Carrito.aspx?idsumcantidad=<% =prod.Producto.IdArticulo.ToString() %>" class="btn btn-dark">+</a>
+
+                    </td>
                     <td><a href="Carrito.aspx?idquitar=<% =prod.Producto.IdArticulo.ToString() %>" class="btn btn-dark">Quitar</a></td>
-                    <td><%=prod.Subtotal %></td>
+                    <td><%="$" %><%=prod.Subtotal %></td>
                 </tr>
 
                 <%} %>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td style="font-weight: bold">Total</td>
+                    <td>
+                        <asp:Label Text="" runat="server" ID="lblTotal" />
+                    </td>
+                </tr>
             </table>
 
         </div>
 
+
     </div>
+    <%--    <div class="container">
+        <div class="row"></div>
+        <div class="col">
+            <table class="table">
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td style="font-weight: bold">Total</td>
+                    <td>
+                        <asp:Label Text="" runat="server" ID="lblTotal" />
+                    </td>
+                </tr>
+            </table>
+
+        </div>
+
+    </div>--%>
 
 
 
